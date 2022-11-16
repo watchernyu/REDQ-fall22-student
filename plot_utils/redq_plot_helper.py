@@ -197,6 +197,10 @@ expbase2color = {
     'REDQ-weighted-wns0-5': 'black',
     'REDQ-weighted-wns0-8': 'pink',
     'REDQ-weighted-wns1-2': 'yellow',
+'SAC-reset0':'red',
+'SAC-reset1':'orange',
+'SAC-reset2':'blue',
+'SAC-reset10':'gray',
 }
 
 def get_ylimit_from_env_ytype(e, ytype, overriding_dict=None):
