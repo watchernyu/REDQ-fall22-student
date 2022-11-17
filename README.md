@@ -3,6 +3,8 @@ Author's PyTorch implementation of Randomized Ensembled Double Q-Learning (REDQ)
 
 This particular repo is a copy of the REDQ source code, but modified for the Fall 22 RL class project. 
 
+NOTE: No need to follow the env setup guide here, your TA will set up the env on your hpc for you. 
+
 <a name="table-of-contents"/> 
 
 ## Table of Contents  
