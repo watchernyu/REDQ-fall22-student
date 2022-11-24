@@ -381,3 +381,22 @@ If you home quota is exceeded, you can contact the current HPC admin to extend y
 
 Our code for REDQ-SAC is partly based on the SAC implementation in OpenAI Spinup (https://github.com/openai/spinningup). The current code structure is inspired by the super clean TD3 source code by Scott Fujimoto (https://github.com/sfujim/TD3). 
 
+## singularity setup
+Work in progress...
+```
+mkdir /scratch/$(whoami)/.sing_cache
+export SINGULARITY_CACHEDIR=/scratch/$(whoami)/.sing_cache
+mkdir /scratch/$(whoami)/sing
+cd /scratch/$(whoami)/sing
+module load singularity
+singularity build mujoco.simg docker://cwatcherw/mujoco:0.3
+
+```
+
+test setup
+```
+srun -p aquila,parallel --pty --mem 12000 -t 0-05:00 bash
+
+```
+
+
