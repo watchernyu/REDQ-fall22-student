@@ -7,7 +7,7 @@
 #SBATCH --mail-type=ALL # select which email types will be sent
 #SBATCH --mail-user=NETID@nyu.edu # NOTE: put your netid here if you want emails
 
-#SBATCH --array=0-0 # here the number depends on number of tasks in the array, e.g. 0-11 will create 12 tasks
+#SBATCH --array=0-11 # here the number depends on number of tasks in the array, e.g. 0-11 will create 12 tasks
 #SBATCH --output=r_%A_%a.out # %A is SLURM_ARRAY_JOB_ID, %a is SLURM_ARRAY_TASK_ID
 #SBATCH --error=r_%A_%a.err
 
@@ -35,7 +35,9 @@ export MUJOCO_GL=egl
 cd /code
 pip install -e .
 cd experiments/
-python proj0.py
+pwd
+echo ${SLURM_ARRAY_TASK_ID}
+python proj0.py ${SLURM_ARRAY_TASK_ID}
 "
 
 #python proj0.py --setting ${SLURM_ARRAY_TASK_ID}

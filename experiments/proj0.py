@@ -15,7 +15,7 @@ if __name__ == '__main__':
     exp_prefix = 'exp'
     # this wi
     settings = ['env_name','',['Hopper-v3', 'HalfCheetah-v3'],
-                'seed','',[0],
+                'seed','',[0, 1],
                 'epochs','e',[40],
                 'num_Q','q',[2],
                 'utd_ratio','uf',[1],
