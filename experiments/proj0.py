@@ -2,6 +2,7 @@ from train_redq_sac import redq_sac as function_to_run ## here make sure you imp
 import time
 from redq.utils.run_utils import setup_logger_kwargs
 from grid_utils import get_setting_and_exp_name
+import sys
 
 if __name__ == '__main__':
     import argparse
@@ -30,6 +31,9 @@ if __name__ == '__main__':
     print("##### TOTAL NUMBER OF VARIANTS: %d #####" % total)
 
     logger_kwargs = setup_logger_kwargs(exp_name_full, actual_setting['seed'], data_dir)
+    print("start to run with setting number", args.setting)
+    sys.stdout.flush()
+
     function_to_run(logger_kwargs=logger_kwargs, **actual_setting)
     print("Total time used: %.3f hours." % ((time.time() - start_time)/3600))
 
