@@ -400,3 +400,8 @@ srun -p aquila,parallel --pty --mem 12000 -t 0-05:00 bash
 ```
 
 
+```
+singularity build --sandbox mujoco-sandbox docker://cwatcherw/mujoco:0.6
+singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code mujoco-sandbox bash
+singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code -B mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ mujoco-sandbox bash
+```
