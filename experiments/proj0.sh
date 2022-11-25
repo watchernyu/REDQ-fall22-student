@@ -7,7 +7,7 @@
 #SBATCH --mail-type=ALL # select which email types will be sent
 #SBATCH --mail-user=NETID@nyu.edu # NOTE: put your netid here if you want emails
 
-#SBATCH --array=0-11 # here the number depends on number of tasks in the array, e.g. 0-11 will create 12 tasks
+#SBATCH --array=0-5 # here the number depends on number of tasks in the array, e.g. 0-11 will create 12 tasks
 #SBATCH --output=r_%A_%a.out # %A is SLURM_ARRAY_JOB_ID, %a is SLURM_ARRAY_TASK_ID
 #SBATCH --error=r_%A_%a.err
 
@@ -32,12 +32,8 @@ singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code -B /scratch/$U
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/workspace/.mujoco/mujoco210/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/nvidia/lib
 export MUJOCO_GL=egl
-cd /code
-pip install -e .
-cd experiments/
-pwd
-echo ${SLURM_ARRAY_TASK_ID}
-python proj0.py ${SLURM_ARRAY_TASK_ID}
+cd /code/REDQ/experiments/
+python proj0.py --setting ${SLURM_ARRAY_TASK_ID}
 "
 
 #python proj0.py --setting ${SLURM_ARRAY_TASK_ID}

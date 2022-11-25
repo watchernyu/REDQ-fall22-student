@@ -383,25 +383,29 @@ Our code for REDQ-SAC is partly based on the SAC implementation in OpenAI Spinup
 
 ## singularity setup
 Work in progress...
-```
-mkdir /scratch/$(whoami)/.sing_cache
-export SINGULARITY_CACHEDIR=/scratch/$(whoami)/.sing_cache
-mkdir /scratch/$(whoami)/sing
-cd /scratch/$(whoami)/sing
-module load singularity
-singularity build mujoco.simg docker://cwatcherw/mujoco:0.3
 
+First time setup: 
+```
+mkdir /scratch/$USER/.sing_cache
+export SINGULARITY_CACHEDIR=/scratch/$USER/.sing_cache
+echo "export SINGULARITY_CACHEDIR=/scratch/$USER/.sing_cache" >> ~/.bashrc
 ```
 
 test setup
 ```
 srun -p aquila,parallel --pty --mem 12000 -t 0-05:00 bash
-
 ```
 
 
+mkdir /scratch/$USER/sing
+cd /scratch/$USER/sing
+module load singularity
+singularity build mujoco.simg docker://cwatcherw/mujoco:0.3
+
+
 ```
-singularity build --sandbox mujoco-sandbox docker://cwatcherw/mujoco:0.6
-singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code mujoco-sandbox bash
-singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code -B mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ mujoco-sandbox bash
+module load singularity
+cd /scratch/$USER/sing/
+singularity build --sandbox mujoco-sandbox docker://cwatcherw/mujoco:0.7
+singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code/REDQ -B /scratch/$USER/sing/mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ /scratch/$USER/sing/mujoco-sandbox bash
 ```
