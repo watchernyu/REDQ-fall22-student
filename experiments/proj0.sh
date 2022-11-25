@@ -28,7 +28,7 @@ export SINGULARITY_CACHEDIR=/scratch/$(whoami)/.sing_cache
 echo "Job ID: ${SLURM_ARRAY_TASK_ID}"
 
 
-singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code -B /scratch/$USER/sing/mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ /scratch/$USER/sing/mujoco-sandbox bash -c "
+singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code/REDQ -B /scratch/$USER/sing/mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ /scratch/$USER/sing/mujoco-sandbox bash -c "
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/workspace/.mujoco/mujoco210/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/nvidia/lib
 export MUJOCO_GL=egl
