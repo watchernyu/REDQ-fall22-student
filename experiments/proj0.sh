@@ -32,7 +32,7 @@ singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code -B /scratch/$U
 cd /code
 pip install -e .
 cd experiments/
-python projo.py
+python proj0.py
 "
 
 #python proj0.py --setting ${SLURM_ARRAY_TASK_ID}
