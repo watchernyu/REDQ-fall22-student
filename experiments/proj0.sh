@@ -29,10 +29,10 @@ echo "Job ID: ${SLURM_ARRAY_TASK_ID}"
 
 
 singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/code -B /scratch/$USER/sing/mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ /scratch/$USER/sing/mujoco-sandbox bash -c "
-echo zzz
-echo cc
-echo vvvv
-pwd
+cd /code
+pip install -e .
+cd experiments/
+python projo.py
 "
 
 #python proj0.py --setting ${SLURM_ARRAY_TASK_ID}
