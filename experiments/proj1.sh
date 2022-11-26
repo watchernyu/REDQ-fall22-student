@@ -23,7 +23,6 @@ echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 
 #module load anaconda3 cuda/9.0 glfw/3.3 gcc/7.3 mesa/19.0.5 llvm/7.0.1 # load modules that we might use
 module load singularity
-export SINGULARITY_CACHEDIR=/scratch/$(whoami)/.sing_cache
 
 echo "Job ID: ${SLURM_ARRAY_TASK_ID}"
 

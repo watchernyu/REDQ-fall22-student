@@ -12,8 +12,6 @@
 
 # #####################################################
 # #SBATCH --gres=gpu:1 # uncomment this line to request a gpu
-# #SBATCH --constraint=cpu # specify constraint features ('cpu' means only use
-# nodes that have the 'cpu' feature) check features with the showcluster command
 
 sleep $(( (RANDOM%10) + 1 )) # to avoid issues when submitting large amounts of jobs
 
