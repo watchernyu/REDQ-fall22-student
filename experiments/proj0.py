@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # this wi
     settings = ['env_name','',['Hopper-v3', 'HalfCheetah-v3'],
                 'seed','',[0],
-                'epochs','e',[40],
+                'epochs','e',[25],
                 'num_Q','q',[2],
                 'utd_ratio','uf',[1],
                 'lr', 'lr', [1e-4, 3e-4, 1e-3],
