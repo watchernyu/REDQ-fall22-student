@@ -412,5 +412,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/workspace/.mujoco/mujoco210/bin
 export MUJOCO_PY_MUJOCO_PATH=/workspace/.mujoco/mujoco210/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/nvidia/lib
 export MUJOCO_GL=egl
-
+cd /workspace/REDQ/experiments
+python proj1.py 
 ```
