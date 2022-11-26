@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #SBATCH --verbose
 #SBATCH -p aquila,parallel
 #SBATCH --time=168:00:00
