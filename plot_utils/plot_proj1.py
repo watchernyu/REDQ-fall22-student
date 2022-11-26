@@ -6,7 +6,7 @@ threecolordoulbe = ['tab:blue', 'tab:orange', 'tab:red', 'tab:blue', 'tab:orange
 threesoliddashed = ['dashed', 'dashed', 'dashed', 'solid', 'solid', 'solid', ]
 standard_6_colors = ('tab:red', 'tab:orange', 'tab:blue', 'tab:brown', 'tab:pink','tab:grey')
 
-envs = ['Hopper-v4', 'HalfCheetah-v4']
+envs = ['Hopper-v3', 'HalfCheetah-v3']
 data_path = '../data/'
 
 standard_ys = ['AverageTestEpRet', 'AverageQ1Vals', 'AverageNormQBias', 'StdNormQBias', 'Time']

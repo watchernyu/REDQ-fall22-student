@@ -66,6 +66,7 @@ def quick_plot(labels, data_folders, colors=DEFAULT_COLORS, linestyles=DEFAULT_L
         for i, label in enumerate(labels): # for each variant
             seeds = []
             data_folder_full_path = os.path.join(base_data_folder_path, data_folders_with_env[i])
+            print("check data folder:", data_folder_full_path)
             for subdir, dirs, files in os.walk(data_folder_full_path):
                 if 'progress.txt' in files:
                     # load progress file
