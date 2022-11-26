@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --mem=12GB
 #SBATCH --mail-type=ALL # select which email types will be sent
-#SBATCH --mail-user=NETID@nyu.edu # NOTE: put your netid here if you want emails
+#SBATCH --mail-user=$USER@nyu.edu # NOTE: put your netid here if you want emails
 
 #SBATCH --array=0-11 # here the number depends on number of tasks in the array, e.g. 0-11 will create 12 tasks
 #SBATCH --output=logs/%A_%a.out # %A is SLURM_ARRAY_JOB_ID, %a is SLURM_ARRAY_TASK_ID
