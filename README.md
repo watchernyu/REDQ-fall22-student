@@ -405,6 +405,9 @@ module load singularity
 cd /scratch/$USER/sing/
 singularity build --sandbox mujoco-sandbox docker://cwatcherw/mujoco:0.7
 singularity exec -B /scratch/$USER/sing/REDQ-fall22-student:/workspace/REDQ -B /scratch/$USER/sing/mujoco-sandbox/opt/conda/lib/python3.8/site-packages/mujoco_py/:/opt/conda/lib/python3.8/site-packages/mujoco_py/ /scratch/$USER/sing/mujoco-sandbox bash
+
+singularity exec -B REDQ-fall22-student/:/workspace/REDQ/ mujoco-sandbox bash
+
 ```
 
 ```
