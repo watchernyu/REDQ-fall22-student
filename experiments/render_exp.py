@@ -1,4 +1,5 @@
 # will render saved agents
+# you can do the rendering with an interactive compute node.
 import gym
 from PIL import Image
 import os.path as osp

@@ -160,8 +160,8 @@ def redq_sac(env_name, seed=0, epochs='mbpo', steps_per_epoch=1000,
         # End of epoch wrap-up
         if (t+1) % steps_per_epoch == 0:
             epoch = t // steps_per_epoch
-            if epoch == 0 or epoch == 299:
-                # PROJ PART 2, this will save
+            if epoch == 0 or epoch==99 or epoch == 299:
+                # PROJ PART 2, this will save agent state with joblib
                 state_dict = {'epoch':epoch + 1, 't':t, 'agent': agent}
                 logger.save_state(state_dict, epoch + 1)
                 print("saved!!!!")
